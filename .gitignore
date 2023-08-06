@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+
+# testing
+/frontend/coverage
+
+# production
+/frontend/build
+
+# misc
+.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Python virtual environment
+/backend/venv/
+
+# PyCharm project settings
+/.idea/
+
+# Compiled python files
+**/*.pyc
+**/__pycache__/
+
+# Jupyter notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Python build and distribution directories
+**/dist/
+**/build/
+**/*.egg-info/
+
+# VSCode settings
+/.vscode/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+/tmp
+/pids
+/*.pid
+/*.seed
+/*.pid.lock
+
+# dotenv environment variable files
+*.env
+
