@@ -1,7 +1,6 @@
 # authentication.py
 import jwt
 from datetime import datetime, timedelta
-from fastapi import HTTPException, status
 from passlib.context import CryptContext
 import os
 
