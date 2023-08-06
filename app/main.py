@@ -13,7 +13,6 @@ from botocore.client import Config
 from boto3.exceptions import S3UploadFailedError
 from app.mongo_db_logic import Users, UserManager, JournalManager, get_current_date, get_formatted_date
 from fastapi.security import OAuth2PasswordBearer
-from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel, EmailStr
 from app.authentication import AuthenticationService, ALGORITHM, SECRET_KEY
 
@@ -21,8 +20,9 @@ from fastapi.security import OAuth2PasswordRequestForm
 import jwt
 from typing import Optional, List
 
-from pymediainfo import MediaInfo
-import mutagen
+
+
+
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 

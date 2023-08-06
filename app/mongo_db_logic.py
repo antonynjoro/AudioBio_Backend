@@ -5,10 +5,9 @@ import os
 import uuid
 import certifi
 from mongoengine import connect, Document, StringField, DateTimeField, FloatField, ListField, DictField, \
-    EmbeddedDocumentField, EmbeddedDocument, BooleanField, register_connection, EmailField
+    EmbeddedDocumentField, EmbeddedDocument, EmailField
 from datetime import datetime
 from werkzeug.security import generate_password_hash
-from typing import Optional, Callable
 import logging
 import pytz
 
