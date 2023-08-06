@@ -1,4 +1,6 @@
-#!/Users/antony/Documents/AudioBio/backend/venv/bin/python3
+#!/bin/sh
+'''exec' "/Users/antony/Documents/AudioBio App Code/backend/venv/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
