@@ -33,7 +33,7 @@ app = FastAPI()
 # In a production application, this should be your domain or a specific set of domains.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://app.audiobio.co", "https://main.d35lo6kdqvpjht.amplifyapp.com"],
+    allow_origins=["http://localhost:3000/*", "https://app.audiobio.co/*", "https://main.d35lo6kdqvpjht.amplifyapp.com/*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -433,7 +433,7 @@ async def get_streak(month: int, year: int, current_user: Users = Depends(get_cu
 class JournalDay(BaseModel):
     id: str
     date: str
-    transcripts: List[str]
+    transcripts: List[Optional[str]]
 
 @app.get("/all_journals", response_model=List[JournalDay])
 async def all_journals(current_user: Users = Depends(get_current_user)) -> List[JournalDay]:
