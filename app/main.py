@@ -33,7 +33,7 @@ app = FastAPI()
 # In a production application, this should be your domain or a specific set of domains.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000", "https://app.audiobio.co", "https://main.d35lo6kdqvpjht.amplifyapp.com/login"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
