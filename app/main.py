@@ -128,7 +128,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()) -> Token:
     # Initiate the authentication service
     auth = AuthenticationService(user)
 
-    if not user:
+    if user is None:
         logging.error(f"User with email {form_data.username} not found.")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -198,7 +198,7 @@ async def signup(new_user: UserCreate) -> Token:
 
     created_user = UserManager.find_user_by_email(email=new_user.email)
 
-    if not created_user:
+    if  created_user is None:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="User creation failed",
@@ -207,7 +207,7 @@ async def signup(new_user: UserCreate) -> Token:
     # Initiate the authentication service
     user_is_authenticated = AuthenticationService(user=created_user).authenticate_user(password=new_user.password)
 
-    if not user_is_authenticated:
+    if user_is_authenticated is False:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="User creation failed",
